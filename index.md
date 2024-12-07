@@ -77,7 +77,12 @@
   </style>
 </head>
 <body>
-  
+<div class="section">
+      <h1>Welcome to My Blog</h1>
+      <p>
+        Explore my thoughts on web development, data science, and my journey as a software developer.
+      </p>
+    </div>
   <div class="content">
     <div class="section">
       <h1>Welcome to My Blog</h1>
