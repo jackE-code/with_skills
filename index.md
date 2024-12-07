@@ -47,7 +47,7 @@
     }
 
     .section {
-      margin: 20px 0;
+      margin: 0;
       padding: 20px;
       border-radius: 10px;
       background: rgba(255, 255, 255, 0.1);
