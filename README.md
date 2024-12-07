@@ -1,45 +1,52 @@
 <header>
 
 <!--
-  <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
+  <<< Author notes: Blog header >>>
+  Include a 1280×640 image, blog title, and a concise description of your blog.
   In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
 -->
 
-# GitHub Pages
+# Elian's Blog
 
-_Create a site or blog from your GitHub repositories with GitHub Pages._
+_A personal space to share insights on tech, coding, and my journey as a software developer._
 
 </header>
 
-<!--
-  <<< Author notes: Finish >>>
-  Review what we learned, ask for feedback, provide next steps.
--->
+## Welcome
 
-## Finish
+Hello, and welcome to my blog! 🌟
 
-_Congratulations friend, you've completed this course!_
+<img src=https://octodex.github.com/images/constructocat2.jpg alt=constructocat width=300 align=right>
 
-<img src=https://octodex.github.com/images/constructocat2.jpg alt=celebrate width=300 align=right>
+Here, you'll find posts about:
 
-Your blog is now live and has been deployed!
+- Web development tips and tutorials.
+- Stories from my personal projects.
+- Discussions on technology trends and innovations.
+- Insights on how to grow as a developer.
 
-Here's a recap of all the tasks you've accomplished in your repository:
+Feel free to explore, share your thoughts, and connect with me!
 
-- You enabled GitHub Pages.
-- You selected a theme using the config file.
-- You learned about proper directory format and file naming conventions in Jekyll.
-- You created your first blog post with Jekyll!
+---
 
-### What's next?
+## Latest Updates
 
-- Keep working on your GitHub Pages site... we love seeing what you come up with!
-- We'd love to hear what you thought of this course [in our discussion board](https://github.com/orgs/skills/discussions/categories/github-pages).
-- [Take another GitHub Skills course](https://github.com/skills).
-- [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
-- To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
+Here’s what you can expect to find:
+
+- Tutorials on building efficient web applications.
+- Updates on my current projects, such as **FoodConnect** and the **Victoria Bank GDI system**.
+- Step-by-step guides on using React, Django, R, and more.
+- Practical advice for startups and software teams.
+
+---
+
+### What’s next?
+
+Keep visiting to stay updated on my journey! Here's how you can get involved:
+
+- [Share your feedback](https://github.com/elian-kim/blog/discussions) – I’d love to hear your thoughts!
+- [Follow my GitHub](https://github.com/njunge3) to see my latest projects.
+- Stay tuned for upcoming interactive tutorials.
 
 <footer>
 
@@ -50,8 +57,8 @@ Here's a recap of all the tasks you've accomplished in your repository:
 
 ---
 
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/github-pages) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
+Need help or have questions? [Post in my discussion board](https://github.com/elian-kim/blog/discussions) &bull; [GitHub status page](https://www.githubstatus.com/)
 
-&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+&copy; 2024 Elian Njung'e Kimani &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
 
 </footer>
