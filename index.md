@@ -77,10 +77,7 @@
   </style>
 </head>
 <body>
-  <div class="app-bar">
-    <h1 class="app-bar-title">Elian's Blog</h1>
-  </div>
-
+  
   <div class="content">
     <div class="section">
       <h1>Welcome to My Blog</h1>
@@ -89,6 +86,7 @@
       </p>
     </div>
 
+    <div class="carousel-container" id="threejs-carousel"></div>
     <div class="carousel-container" id="threejs-carousel"></div>
 
     <div class="section">
