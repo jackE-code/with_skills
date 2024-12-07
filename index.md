@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,10 +9,11 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(120deg, #000000, #003300, #120D50FF, #0E460EFF, #00159FFF);
+      background: linear-gradient(120deg, #000000, #003300, #120D50, #0E460E, #00159F);
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
       color: #ffffff;
+      overflow-x: hidden;
     }
 
     /* Gradient Animation */
@@ -59,37 +61,35 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Buttons for navigation */
-    .nav-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
+    /* Three.js Canvas */
+    .carousel-container {
+      position: relative;
+      height: 500px;
+      margin: 50px auto;
+      max-width: 80%;
     }
 
-    .nav-buttons a {
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 18px;
-      padding: 10px 20px;
-      border: 2px solid #00cc00;
-      border-radius: 5px;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .nav-buttons a:hover {
-      background-color: #00cc00;
-      color: #000000;
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
-    <div class="content">
+  <div class="app-bar">
+    <h1 class="app-bar-title">Elian's Blog</h1>
+  </div>
+
+  <div class="content">
     <div class="section">
       <h1>Welcome to My Blog</h1>
       <p>
         Explore my thoughts on web development, data science, and my journey as a software developer.
       </p>
     </div>
+
+    <div class="carousel-container" id="threejs-carousel"></div>
 
     <div class="section">
       <h2>Featured Topics</h2>
@@ -109,5 +109,57 @@
       </div>
     </div>
   </div>
+
+  <!-- Include Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+  <script>
+    // Three.js Animation
+    const container = document.getElementById('threejs-carousel');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement);
+
+    // Create a cube
+    const cubeGeometry = new THREE.BoxGeometry();
+    const cubeMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+    const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+    scene.add(cube);
+
+    // Create a sphere
+    const sphereGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+    const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0xff0000 });
+    const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    sphere.position.x = 2;
+    scene.add(sphere);
+
+    // Add lights
+    const light = new THREE.PointLight(0xffffff, 1, 100);
+    light.position.set(5, 5, 5);
+    scene.add(light);
+
+    // Camera position
+    camera.position.z = 5;
+
+    // Animation loop
+    function animate() {
+      requestAnimationFrame(animate);
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.01;
+      sphere.rotation.x -= 0.01;
+      sphere.rotation.y -= 0.01;
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+  </script>
 </body>
 </html>
