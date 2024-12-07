@@ -34,7 +34,7 @@ Feel free to explore, share your thoughts, and connect with me!
 Here’s what you can expect to find:
 
 - Tutorials on building efficient web applications.
-- Updates on my current projects, such as **FoodConnect** and the **Victoria Bank GDI system**.
+- Updates on my current projects, such as **FoodConnect**.
 - Step-by-step guides on using React, Django, R, and more.
 - Practical advice for startups and software teams.
 
