@@ -83,11 +83,7 @@
   </style>
 </head>
 <body>
-  <div class="app-bar">
-    <p class="app-bar-title">Elian's Blog</p>
-  </div>
-
-  <div class="content">
+    <div class="content">
     <div class="section">
       <h1>Welcome to My Blog</h1>
       <p>
