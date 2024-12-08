@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(120deg, #000000, #003300, #120D50, #0E460E, #00159F);
+      background: linear-gradient(120deg, #000000, #010F01FF, #120D50, #000400FF, #00159F);
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
       color: #ffffff;
