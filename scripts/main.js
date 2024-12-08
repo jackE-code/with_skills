@@ -1,5 +1,5 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js';
-import { GLTFLoader } from './loaders/GLTFLoader.js';
+import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.152.0/examples/jsm/loaders/GLTFLoader.js';
 
 // Initialize Scene
 const container = document.getElementById('model-viewer');
@@ -19,16 +19,16 @@ scene.add(directionalLight);
 // Load GLTF Model
 const loader = new GLTFLoader();
 loader.load(
-  '../assets/models/scene.gltf', // Update this path to match your project
+  './assets/models/scene.gltf', // Ensure this path matches your directory structure
   function (gltf) {
     const model = gltf.scene;
-    model.scale.set(1, 1, 1); // Adjust scale
+    model.scale.set(1, 1, 1); // Adjust scale if needed
     scene.add(model);
     camera.position.set(0, 1, 5);
   },
   undefined,
   function (error) {
-    console.error('An error occurred:', error);
+    console.error('An error occurred while loading the model:', error);
   }
 );
 
