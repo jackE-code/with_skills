@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -60,6 +61,7 @@
   </style>
 </head>
 <body>
+  <!-- Welcome Section -->
   <div class="section">
     <h1>Welcome to My Blog</h1>
     <p>
@@ -67,9 +69,11 @@
     </p>
   </div>
 
+  <!-- Three.js Model Viewer -->
   <div class="content">
-    <div class="model-container" id="model-viewer"></div>
+    <div id="model-viewer" class="model-container"></div>
 
+    <!-- Featured Topics Section -->
     <div class="section">
       <h2>Featured Topics</h2>
       <ul>
@@ -79,6 +83,7 @@
       </ul>
     </div>
 
+    <!-- Navigation Links -->
     <div class="section">
       <h2>Navigate</h2>
       <div class="nav-buttons">
@@ -89,57 +94,7 @@
     </div>
   </div>
 
-  <!-- Include Three.js and GLTFLoader -->
-  <!-- Include Three.js and GLTFLoader -->
-  <script src="https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.152.0/examples/js/loaders/GLTFLoader.js"></script>
-  <script>
-    // Initialize Three.js scene
-    const container = document.getElementById('model-viewer');
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    container.appendChild(renderer.domElement);
-
-    // Add lighting
-    const light = new THREE.AmbientLight(0xffffff, 1);
-    scene.add(light);
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-    directionalLight.position.set(5, 5, 5);
-    scene.add(directionalLight);
-
-    // Load GLTF Model
-    const loader = new THREE.GLTFLoader();
-    loader.load(
-      'assets/models/scene.gltf', // Update with the correct relative path
-      function (gltf) {
-        const model = gltf.scene;
-        model.scale.set(1, 1, 1); // Adjust scale if needed
-        scene.add(model);
-        camera.position.set(0, 1, 5); // Adjust camera position
-      },
-      undefined,
-      function (error) {
-        console.error('An error occurred while loading the model:', error);
-      }
-    );
-
-    // Animation Loop
-    function animate() {
-      requestAnimationFrame(animate);
-      renderer.render(scene, camera);
-    }
-
-    animate();
-
-    // Handle Resize
-    window.addEventListener('resize', () => {
-      camera.aspect = container.clientWidth / container.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(container.clientWidth, container.clientHeight);
-    });
-  </script>
+  <!-- Import JavaScript as a Module -->
+  <script type="module" src="scripts/main.js"></script>
 </body>
 </html>
