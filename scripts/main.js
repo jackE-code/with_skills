@@ -1,5 +1,5 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js';
-import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.152.0/examples/jsm/loaders/GLTFLoader.js';
+import { GLTFLoader } from './loaders/GLTFLoader.js';
 
 // Initialize Scene
 const container = document.getElementById('model-viewer');
