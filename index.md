@@ -90,8 +90,9 @@
   </div>
 
   <!-- Include Three.js and GLTFLoader -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/examples/js/loaders/GLTFLoader.js"></script>
+  <!-- Include Three.js and GLTFLoader -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.0/examples/js/loaders/GLTFLoader.js"></script>
   <script>
     // Initialize Three.js scene
     const container = document.getElementById('model-viewer');
