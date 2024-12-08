@@ -22,23 +22,7 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* App Bar */
-    .app-bar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 10px 20px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      z-index: 1000;
-    }
-
-    .app-bar-title {
-      margin: 0;
-    }
-
+  
     /* Content Styling */
     .content {
       padding: 100px 20px;
