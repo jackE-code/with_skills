@@ -23,7 +23,6 @@
       100% { background-position: 0% 50%; }
     }
 
-  
     /* Content Styling */
     .content {
       padding: 100px 20px;
@@ -31,26 +30,27 @@
     }
 
     .section {
-      margin: 0;
+      margin: 20px auto;
       padding: 20px;
+      max-width: 900px;
       border-radius: 10px;
       background: rgba(255, 255, 255, 0.1);
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
       animation: fadeIn 2s ease-in-out;
     }
 
-    /* Fade-in animation */
+    /* Fade-in Animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     /* Three.js Canvas */
-    .carousel-container {
+    .model-container {
       position: relative;
       height: 500px;
       margin: 50px auto;
-      max-width: 80%;
+      max-width: 100%;
     }
 
     canvas {
@@ -61,22 +61,15 @@
   </style>
 </head>
 <body>
-<div class="section">
-      <h1>Welcome to My Blog</h1>
-      <p>
-        Explore my thoughts on web development, data science, and my journey as a software developer.
-      </p>
-    </div>
-  <div class="content">
-    <div class="section">
-      <h1>Welcome to My Blog</h1>
-      <p>
-        Explore my thoughts on web development, data science, and my journey as a software developer.
-      </p>
-    </div>
+  <div class="section">
+    <h1>Welcome to My Blog</h1>
+    <p>
+      Explore my thoughts on web development, data science, and my journey as a software developer.
+    </p>
+  </div>
 
-    <div class="carousel-container" id="threejs-carousel"></div>
-    <div class="carousel-container" id="threejs-carousel"></div>
+  <div class="content">
+    <div class="model-container" id="model-viewer"></div>
 
     <div class="section">
       <h2>Featured Topics</h2>
@@ -97,51 +90,51 @@
     </div>
   </div>
 
-  <!-- Include Three.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+  <!-- Include Three.js and GLTFLoader -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/examples/js/loaders/GLTFLoader.js"></script>
   <script>
-    // Three.js Animation
-    const container = document.getElementById('threejs-carousel');
+    // Initialize Three.js scene
+    const container = document.getElementById('model-viewer');
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer();
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
 
-    // Create a cube
-    const cubeGeometry = new THREE.BoxGeometry();
-    const cubeMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-    scene.add(cube);
-
-    // Create a sphere
-    const sphereGeometry = new THREE.SphereGeometry(0.5, 32, 32);
-    const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0xff0000 });
-    const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
-    sphere.position.x = 2;
-    scene.add(sphere);
-
-    // Add lights
-    const light = new THREE.PointLight(0xffffff, 1, 100);
-    light.position.set(5, 5, 5);
+    // Add lighting
+    const light = new THREE.AmbientLight(0xffffff, 1);
     scene.add(light);
 
-    // Camera position
-    camera.position.z = 5;
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+    directionalLight.position.set(5, 5, 5);
+    scene.add(directionalLight);
 
-    // Animation loop
+    // Load GLTF Model
+    const loader = new THREE.GLTFLoader();
+    loader.load(
+      'assets/models/scene.gltf', // Update with the correct relative path
+      function (gltf) {
+        const model = gltf.scene;
+        model.scale.set(1, 1, 1); // Adjust scale if needed
+        scene.add(model);
+        camera.position.set(0, 1, 5); // Adjust camera position
+      },
+      undefined,
+      function (error) {
+        console.error('An error occurred while loading the model:', error);
+      }
+    );
+
+    // Animation Loop
     function animate() {
       requestAnimationFrame(animate);
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-      sphere.rotation.x -= 0.01;
-      sphere.rotation.y -= 0.01;
       renderer.render(scene, camera);
     }
 
     animate();
 
-    // Handle window resize
+    // Handle Resize
     window.addEventListener('resize', () => {
       camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
