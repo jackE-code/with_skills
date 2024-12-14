@@ -92,7 +92,7 @@
 
   <div class="content">
     <div class="section">
-      <h1 class="text-4xl font-bold mb-4">Welcome to My Blog</h1>
+      <h1 class="text-4xl font-bold mb-4">Code as Art With Njung'e</h1>
       <p class="text-xl">
         Explore my journey as a full-stack developer, blockchain enthusiast, and DevOps engineer.
       </p>
@@ -103,7 +103,65 @@
       <div id="repositories" class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <!-- Repositories dynamically populated here -->
       </div>
+      <div class="flex justify-center mt-4">
+        <button id="prevPage" class="bg-gray-500 text-white px-4 py-2 rounded mr-2 disabled:opacity-50" disabled>Previous</button>
+        <button id="nextPage" class="bg-blue-500 text-white px-4 py-2 rounded">Next</button>
+      </div>
     </div>
+
+    <!-- <script>
+      let currentPage = 1;
+      const reposPerPage = 6; // Number of repos per page
+      let allRepos = [];
+
+      async function fetchRepositories() {
+        try {
+          const [repos1, repos2] = await Promise.all([
+            fetch('https://api.github.com/users/jacke-code/repos').then(res => res.json()),
+            fetch('https://api.github.com/users/njunge3/repos').then(res => res.json())
+          ]);
+
+          allRepos = [...repos1, ...repos2];
+          renderRepositories();
+        } catch (error) {
+          console.error('Error fetching repositories:', error);
+        }
+      }
+
+      function renderRepositories() {
+        const startIndex = (currentPage - 1) * reposPerPage;
+        const endIndex = startIndex + reposPerPage;
+        const reposToShow = allRepos.slice(startIndex, endIndex);
+
+        const reposContainer = document.getElementById('repositories');
+        reposContainer.innerHTML = reposToShow.map(repo => `
+          <div class="repo-card">
+            <h3 class="font-bold text-xl mb-2">${repo.name}</h3>
+            <p class="text-sm mb-2">${repo.description || 'No description'}</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-400">${repo.language || 'Unknown'}</span>
+              <a href="${repo.html_url}" target="_blank" class="bg-blue-500 text-white px-2 py-1 rounded text-sm">View Repo</a>
+            </div>
+          </div>
+        `).join('');
+
+        document.getElementById('prevPage').disabled = currentPage === 1;
+        document.getElementById('nextPage').disabled = endIndex >= allRepos.length;
+      }
+
+      document.getElementById('prevPage').addEventListener('click', () => {
+        currentPage--;
+        renderRepositories();
+      });
+
+      document.getElementById('nextPage').addEventListener('click', () => {
+        currentPage++;
+        renderRepositories();
+      });
+
+      window.addEventListener('load', fetchRepositories);
+    </script> -->
+
 
     <div class="section">
       <h2 class="text-3xl font-semibold mb-6">Languages and Frameworks</h2>
@@ -134,7 +192,7 @@
     </div>
   </div>
 
-  <script>
+  <!-- <script>
     async function fetchRepositories() {
       try {
         const [repos1, repos2] = await Promise.all([
@@ -160,6 +218,58 @@
     }
 
     window.addEventListener('load', fetchRepositories);
-  </script>
+  </script> -->
+  <script>
+  let currentPage = 1;
+  const reposPerPage = 6; // Number of repos per page
+  let allRepos = [];
+
+  async function fetchRepositories() {
+    try {
+      const [repos1, repos2] = await Promise.all([
+        fetch('https://api.github.com/users/jacke-code/repos').then(res => res.json()),
+        fetch('https://api.github.com/users/njunge3/repos').then(res => res.json())
+      ]);
+
+      allRepos = [...repos1, ...repos2];
+      renderRepositories();
+    } catch (error) {
+      console.error('Error fetching repositories:', error);
+    }
+  }
+
+  function renderRepositories() {
+    const startIndex = (currentPage - 1) * reposPerPage;
+    const endIndex = startIndex + reposPerPage;
+    const reposToShow = allRepos.slice(startIndex, endIndex);
+
+    const reposContainer = document.getElementById('repositories');
+    reposContainer.innerHTML = reposToShow.map(repo => `
+      <div class="repo-card">
+        <h3 class="font-bold text-xl mb-2">${repo.name}</h3>
+        <p class="text-sm mb-2">${repo.description || 'No description'}</p>
+        <div class="flex justify-between items-center">
+          <span class="text-sm text-gray-400">${repo.language || 'Unknown'}</span>
+          <a href="${repo.html_url}" target="_blank" class="bg-blue-500 text-white px-2 py-1 rounded text-sm">View Repo</a>
+        </div>
+      </div>
+    `).join('');
+
+    document.getElementById('prevPage').disabled = currentPage === 1;
+    document.getElementById('nextPage').disabled = endIndex >= allRepos.length;
+  }
+
+  document.getElementById('prevPage').addEventListener('click', () => {
+    currentPage--;
+    renderRepositories();
+  });
+
+  document.getElementById('nextPage').addEventListener('click', () => {
+    currentPage++;
+    renderRepositories();
+  });
+
+  window.addEventListener('load', fetchRepositories);
+</script>
 </body>
 </html>
