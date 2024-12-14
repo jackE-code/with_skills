@@ -90,7 +90,7 @@
       display: flex;
       overflow: hidden;
       white-space: nowrap;
-      width: 100%;
+      width: 70%;
       background-color: #ffffff;
       padding: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -187,7 +187,7 @@
 
 
     <div class="section">
-      <h2 class="text-3xl font-semibold mb-6">Languages and Frameworks</h2>
+      <h2 class="text-3xl font-semibold mb-6">Recent Languages and Frameworks</h2>
       <div class="flex flex-wrap justify-center space-x-4">
         <span class="bg-blue-600 text-white px-4 py-2 rounded-lg">JavaScript</span>
         <span class="bg-green-600 text-white px-4 py-2 rounded-lg">Python</span>
