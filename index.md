@@ -91,6 +91,7 @@
       overflow: hidden;
       white-space: nowrap;
       width: 100%;
+      margin-bottom: 15px;
       background-color: transparent;
       padding: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
