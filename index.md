@@ -96,8 +96,8 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     .marquee img {
-      height: 30px;
-      margin: 0 8px;
+      height: 42px;
+      margin: 0 12px;
       animation: scroll 10s linear infinite;
     }
     @keyframes scroll {
