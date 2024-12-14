@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -105,7 +104,7 @@
     async function fetchRepositories() {
       try {
         // Replace 'yourusername' with your actual GitHub username
-        const response = await fetch('https://api.github.com/users/yourusername/repos');
+        const response = await fetch('https://api.github.com/users/jacke-code/repos');
         const repos = await response.json();
         
         const reposContainer = document.getElementById('repositories');
