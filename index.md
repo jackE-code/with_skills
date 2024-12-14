@@ -5,6 +5,14 @@
   <title>Elian's Blog</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
+
+    .wrapper {
+      max-width: none !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      padding: 15px !important;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
