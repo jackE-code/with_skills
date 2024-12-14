@@ -66,7 +66,7 @@
       100% { left: 100%; right: 0; }
     }
 
-    .marquee {
+    <!-- .marquee {
       margin-top: 20px;
       overflow: hidden;
       white-space: nowrap;
@@ -84,6 +84,29 @@
     @keyframes marquee {
       from { transform: translateX(100%); }
       to { transform: translateX(-100%); }
+    } -->
+
+    .marquee {
+      display: flex;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .marquee img {
+      height: 30px;
+      margin: 0 8px;
+      animation: scroll 10s linear infinite;
+    }
+    @keyframes scroll {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
     }
   </style>
 </head>
@@ -182,14 +205,7 @@
       </div>
     </div>
 
-    <div class="marquee">
-      <span><img src="icons/react.png" alt="React" width="30"></span>
-      <span><img src="icons/angular.png" alt="Angular" width="30"></span>
-      <span><img src="icons/docker.png" alt="Docker" width="30"></span>
-      <span><img src="icons/nodejs.png" alt="Node.js" width="30"></span>
-      <span><img src="icons/aws.png" alt="AWS" width="30"></span>
-      <!-- Add more icons -->
-    </div>
+    <div class="marquee" id="iconMarquee"></div>
   </div>
 
   <!-- <script>
@@ -270,6 +286,26 @@
   });
 
   window.addEventListener('load', fetchRepositories);
+</script>
+<script>
+  const icons = [
+    "acrobat.png", "adobe.png", "animate.png", "apple.png", "azure.png",
+    "bitbucket.png", "c-.png", "c-sharp.png", "database.png", "devops.png",
+    "docker.png", "ethereum.png", "git.png", "github.png", "gitlab.png",
+    "hard-hat.png", "html-5.png", "illustrator.png", "java-script.png",
+    "jira.png", "linux.png", "mysql.png", "nodejs.png", "photoshop.png",
+    "php.png", "prometheus.png", "python.png", "r.png", "ruby.png",
+    "social.png", "visual-studio.png", "web3.png", "xd.png"
+  ];
+
+  const marquee = document.getElementById('iconMarquee');
+
+  icons.forEach(icon => {
+    const img = document.createElement('img');
+    img.src = `icons/${icon}`;
+    img.alt = icon.split('.')[0];
+    marquee.appendChild(img);
+  });
 </script>
 </body>
 </html>
