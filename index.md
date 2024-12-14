@@ -291,7 +291,7 @@
   const icons = [
     "acrobat.png", "adobe.png", "animate.png", "apple.png", "azure.png",
     "bitbucket.png", "c-.png", "c-sharp.png", "database.png", "devops.png",
-    "docker.png", "ethereum.png", "git.png", "github.png", "gitlab.png",
+    "docker.png", "etherum.png", "git.png", "github.png", "gitlab.png",
     "hard-hat.png", "html-5.png", "illustrator.png", "java-script.png",
     "jira.png", "linux.png", "mysql.png", "nodejs.png", "photoshop.png",
     "php.png", "prometheus.png", "python.png", "r.png", "ruby.png",
