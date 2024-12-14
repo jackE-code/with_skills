@@ -6,6 +6,11 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     /* Existing Styles */
+  .wrapper{
+    maxwidth: max-content;
+  }
+
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -72,6 +77,8 @@
       </div>
     </div>
 
+    
+
     <!-- DevOps & CI/CD Section -->
     <div class="section">
       <h2 class="text-3xl font-semibold mb-6">DevOps & CI/CD Pipelines</h2>
@@ -104,7 +111,7 @@
     async function fetchRepositories() {
       try {
         // Replace 'yourusername' with your actual GitHub username
-        const response = await fetch('https://api.github.com/users/jacke-code/repos');
+        const response = await fetch('https://api.github.com/users/jacke-code/repos' && 'https://api.github.com/users/njunge3/repos');
         const repos = await response.json();
         
         const reposContainer = document.getElementById('repositories');
