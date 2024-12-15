@@ -1,0 +1,138 @@
+name: Daily Blog Post Workflow
+
+on:
+  schedule:
+    # Runs at 00:00 UTC daily
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    inputs:
+      force_create:
+        description: 'Force create today\'s post issue'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  create-daily-blog-post-issue:
+    runs-on: ubuntu-latest
+    outputs:
+      issue_number: ${{ steps.create-issue.outputs.issue_number }}
+    steps:
+      - name: Checkout my-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: my-pages
+          fetch-depth: 0
+
+      - name: Get Current Date
+        id: date
+        run: |
+          echo "today=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+          echo "formatted_date=$(date +'%B %d, %Y')" >> $GITHUB_OUTPUT
+
+      - name: Check for Existing Post
+        id: check_post
+        run: |
+          # Check if post already exists
+          POST_EXISTS=$(find _posts -name "${{ steps.date.outputs.today }}-*.md" | wc -l)
+          echo "post_exists=$POST_EXISTS" >> $GITHUB_OUTPUT
+
+      - name: Create Daily Blog Post Issue
+        id: create-issue
+        if: steps.check_post.outputs.post_exists == '0' || inputs.force_create
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Create issue on my-pages branch
+          ISSUE_NUMBER=$(gh issue create \
+            --title "Daily Blog Post for ${{ steps.date.outputs.formatted_date }}" \
+            --body "## Daily Blog Post Submission Guidelines
+
+### Post File Location
+- Create in: \`_posts\` directory
+- Filename format: \`${{ steps.date.outputs.today }}-your-post-title.md\`
+
+### Front Matter Template
+\`\`\`markdown
+---
+title: \"Your Post Title\"
+description: \"Brief post description\"
+date: ${{ steps.date.outputs.today }}
+categories: [category]
+tags: [tag1, tag2]
+---
+
+Your blog content here...
+\`\`\`
+
+### Submission Steps
+1. Create markdown file in \`_posts\` directory
+2. Use specified filename format
+3. Include complete front matter
+4. Write your content
+5. Close this issue when post is ready
+
+### Workflow Triggers
+- Posting will automatically trigger site rebuild
+- Ensure all content is ready before closing
+" \
+            --label "daily-blog-post" \
+            --assignee "${{ github.actor }}")
+          
+          echo "issue_number=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
+
+  monitor-post-creation:
+    needs: create-daily-blog-post-issue
+    if: needs.create-daily-blog-post-issue.outputs.issue_number != ''
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Issue Resolution
+        env:
+          GH_TOKEN: ${{ secrets.MY_TOKEN }}
+          ISSUE_NUMBER: ${{ needs.create-daily-blog-post-issue.outputs.issue_number }}
+        run: |
+          # Monitor issue status
+          while true; do
+            # Check issue state
+            ISSUE_STATE=$(gh issue view $ISSUE_NUMBER --json state --jq .state)
+            
+            if [[ "$ISSUE_STATE" == "CLOSED" ]]; then
+              echo "Daily blog post issue has been resolved!"
+              break
+            fi
+            
+            # Wait for 1 hour before rechecking
+            sleep 3600
+          done
+
+      - name: Validate and Trigger Deployment
+        env:
+          GH_TOKEN: ${{ secrets.MY_TOKEN }}
+        run: |
+          # Checkout my-pages branch
+          git checkout my-pages
+          
+          # Find today's post
+          TODAY=$(date +'%Y-%m-%d')
+          POST_FILE=$(find _posts -name "$TODAY-*.md")
+          
+          if [[ -z "$POST_FILE" ]]; then
+            echo "Error: No blog post found for today"
+            exit 1
+          fi
+          
+          # Validate basic front matter
+          if ! grep -q "title:" "$POST_FILE" || ! grep -q "description:" "$POST_FILE"; then
+            echo "Warning: Incomplete front matter"
+            exit 1
+          fi
+          
+          # Commit and push changes
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git add _posts
+          git commit -m "Add daily blog post: $(basename "$POST_FILE")"
+          git push origin my-pages
