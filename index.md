@@ -257,7 +257,7 @@
   <h2 class="text-3xl font-semibold mb-6">Known</h2>
   <div id="KnowledgeBase" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <div class="Acc1">
-        <h1>📊 GitHub Stats:</h1>
+        <h1>📊 GitHub Stats: Kim Full Stack</h1>
         <img src="https://github-readme-stats.vercel.app/api?username=jacke-code&theme=dark&hide_border=false&include_all_commits=false&count_private=false" alt="GitHub Stats"><br/>
         <img src="https://github-readme-streak-stats.herokuapp.com/?user=jacke-code&theme=dark&hide_border=false" alt="GitHub Streak Stats"><br/>
         <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jacke-code&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" alt="Top Languages">
@@ -272,7 +272,7 @@
 
     <!-- For Njunge3 -->
      <div class="Acc2">
-        <h1>📊 GitHub Stats:</h1>
+        <h1>📊 GitHub Stats:Kim DevOps</h1>
         <img src="https://github-readme-stats.vercel.app/api?username=njunge3&theme=dark&hide_border=false&include_all_commits=false&count_private=false" alt="GitHub Stats"><br/>
         <img src="https://github-readme-streak-stats.herokuapp.com/?user=njunge3&theme=dark&hide_border=false" alt="GitHub Streak Stats"><br/>
         <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=njunge3&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" alt="Top Languages">
