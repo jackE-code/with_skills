@@ -60,6 +60,10 @@
       animation: snakeMove 3s linear infinite;
     }
 
+    .spacer{
+     margin: 10px;
+    }
+
     @keyframes snakeMove {
       0% { left: 0; right: 100%; }
       50% { left: 50%; right: 50%; }
@@ -192,7 +196,7 @@
       <div class="flex flex-wrap justify-center space-x-4">
         <!-- Programming Languages -->
     <div>
-      
+      <div class="spacer"></div>
       <div class="flex flex-wrap gap-2">
         <img src="https://img.shields.io/badge/Apache%20Groovy-4298B8.svg?style=for-the-badge&logo=Apache+Groovy&logoColor=white" alt="Apache Groovy">
         <img src="https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white" alt="C">
@@ -207,7 +211,7 @@
 
     <!-- Frameworks -->
     <div>
-      
+      <div class="spacer"></div>
       <div class="flex flex-wrap gap-2">
         <img src="https://img.shields.io/badge/Django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white" alt="Django">
         <img src="https://img.shields.io/badge/Laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
@@ -219,7 +223,7 @@
 
     <!-- Cloud Platforms -->
     <div>
-      <h3 class="text-xl font-medium mb-2">Cloud Platforms</h3>
+      <div class="spacer"></div>
       <div class="flex flex-wrap gap-2">
         <img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
         <img src="https://img.shields.io/badge/Azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white" alt="Azure">
