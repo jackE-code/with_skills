@@ -256,7 +256,7 @@
    <div class="section">
   <h2 class="text-3xl font-semibold mb-6">Known</h2>
   <div id="KnowledgeBase" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div>
+      <div class="Acc1">
         <h1>📊 GitHub Stats:</h1>
         <img src="https://github-readme-stats.vercel.app/api?username=jacke-code&theme=dark&hide_border=false&include_all_commits=false&count_private=false" alt="GitHub Stats"><br/>
         <img src="https://github-readme-streak-stats.herokuapp.com/?user=jacke-code&theme=dark&hide_border=false" alt="GitHub Streak Stats"><br/>
@@ -270,6 +270,23 @@
         
         <h3>🔝 Top Contributed Repo</h3>
         <img src="https://github-contributor-stats.vercel.app/api?username=jacke-code&limit=5&theme=dark&combine_all_yearly_contributions=true" alt="Top Contributed Repos">
+    </div>
+
+    <!-- For Njunge3 -->
+     <div class="Acc2">
+        <h1>📊 GitHub Stats:</h1>
+        <img src="https://github-readme-stats.vercel.app/api?username=njunge3&theme=dark&hide_border=false&include_all_commits=false&count_private=false" alt="GitHub Stats"><br/>
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=njunge3&theme=dark&hide_border=false" alt="GitHub Streak Stats"><br/>
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=njunge3&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" alt="Top Languages">
+        
+        <h2>🏆 GitHub Trophies</h2>
+        <img src="https://github-profile-trophy.vercel.app/?username=njunge3&theme=radical&no-frame=false&no-bg=true&margin-w=4" alt="GitHub Trophies">
+        
+        <h3>✍️ Random Dev Quote</h3>
+        <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random Dev Quote">
+        
+        <h3>🔝 Top Contributed Repo</h3>
+        <img src="https://github-contributor-stats.vercel.app/api?username=njunge3&limit=5&theme=dark&combine_all_yearly_contributions=true" alt="Top Contributed Repos">
     </div>
     
   </div>
