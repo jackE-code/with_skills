@@ -265,8 +265,6 @@
         <h2>🏆 GitHub Trophies</h2>
         <img src="https://github-profile-trophy.vercel.app/?username=jacke-code&theme=radical&no-frame=false&no-bg=true&margin-w=4" alt="GitHub Trophies">
         
-        <h3>✍️ Random Dev Quote</h3>
-        <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random Dev Quote">
         
         <h3>🔝 Top Contributed Repo</h3>
         <img src="https://github-contributor-stats.vercel.app/api?username=jacke-code&limit=5&theme=dark&combine_all_yearly_contributions=true" alt="Top Contributed Repos">
@@ -282,8 +280,7 @@
         <h2>🏆 GitHub Trophies</h2>
         <img src="https://github-profile-trophy.vercel.app/?username=njunge3&theme=radical&no-frame=false&no-bg=true&margin-w=4" alt="GitHub Trophies">
         
-        <h3>✍️ Random Dev Quote</h3>
-        <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random Dev Quote">
+        
         
         <h3>🔝 Top Contributed Repo</h3>
         <img src="https://github-contributor-stats.vercel.app/api?username=njunge3&limit=5&theme=dark&combine_all_yearly_contributions=true" alt="Top Contributed Repos">
