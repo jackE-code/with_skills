@@ -192,7 +192,7 @@
       <div class="flex flex-wrap justify-center space-x-4">
         <!-- Programming Languages -->
     <div>
-      <h3 class="text-xl font-medium mb-2">Programming Languages</h3>
+      
       <div class="flex flex-wrap gap-2">
         <img src="https://img.shields.io/badge/Apache%20Groovy-4298B8.svg?style=for-the-badge&logo=Apache+Groovy&logoColor=white" alt="Apache Groovy">
         <img src="https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white" alt="C">
@@ -207,7 +207,7 @@
 
     <!-- Frameworks -->
     <div>
-      <h3 class="text-xl font-medium mb-2">Frameworks</h3>
+      
       <div class="flex flex-wrap gap-2">
         <img src="https://img.shields.io/badge/Django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white" alt="Django">
         <img src="https://img.shields.io/badge/Laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
@@ -231,7 +231,7 @@
 
     <!-- Tools -->
     <div>
-      <h3 class="text-xl font-medium mb-2">Tools</h3>
+      
       <div class="flex flex-wrap gap-2">
         <img src="https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white" alt="NPM">
         <img src="https://img.shields.io/badge/Insomnia-black?style=for-the-badge&logo=insomnia&logoColor=5849BE" alt="Insomnia">
