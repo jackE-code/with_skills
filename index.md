@@ -190,26 +190,7 @@
     <div class="section">
       <h2 class="text-3xl font-semibold mb-6">Recent Languages and Frameworks</h2>
       <div class="flex flex-wrap justify-center space-x-4">
-        <span class="bg-blue-600 text-white px-4 py-2 rounded-lg">JavaScript</span>
-        <span class="bg-green-600 text-white px-4 py-2 rounded-lg">Python</span>
-        <span class="bg-red-600 text-white px-4 py-2 rounded-lg">Ruby</span>
-        <span class="bg-yellow-600 text-white px-4 py-2 rounded-lg">C++</span>
-        <span class="bg-indigo-600 text-white px-4 py-2 rounded-lg">Solidity</span>
-        <!-- Add more languages here -->
-      </div>
-    </div>
-
-    <div class="section">
-      <h2 class="text-3xl font-semibold mb-6">DevOps & CI/CD Pipelines</h2>
-      <div id="cicd-pipelines" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- CI/CD Pipelines dynamically populated here -->
-      </div>
-    </div>
-    
-   <div class="section">
-  <h2 class="text-3xl font-semibold mb-6">Known</h2>
-  <div id="KnowledgeBase" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    <!-- Programming Languages -->
+        <!-- Programming Languages -->
     <div>
       <h3 class="text-xl font-medium mb-2">Programming Languages</h3>
       <div class="flex flex-wrap gap-2">
@@ -258,6 +239,20 @@
         <img src="https://img.shields.io/badge/Chart.js-F5788D.svg?style=for-the-badge&logo=chart.js&logoColor=white" alt="Chart.js">
       </div>
     </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="text-3xl font-semibold mb-6">DevOps & CI/CD Pipelines</h2>
+      <div id="cicd-pipelines" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- CI/CD Pipelines dynamically populated here -->
+      </div>
+    </div>
+    
+   <div class="section">
+  <h2 class="text-3xl font-semibold mb-6">Known</h2>
+  <div id="KnowledgeBase" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    
   </div>
 </div>
 
