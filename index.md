@@ -789,13 +789,13 @@
         <div class="timeline-item">
           <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
             <div>
-              <h3 class="text-lg font-bold">Bachelor of Science in Computer Science</h3>
-              <p class="opacity-80">University of Nairobi</p>
+              <h3 class="text-lg font-bold">Bachelor of Science in Actuarial Science</h3>
+              <p class="opacity-80">Machakos University</p>
             </div>
             <span class="text-xs bg-gray-600 px-2 py-1 rounded">2010 - 2014</span>
           </div>
           <p class="mb-3 opacity-80">
-            Specialized in Software Engineering and Database Systems. Graduated with Second Class Honors (Upper Division).
+            Specialized in Deep Learning and Database Systems. Graduated with Second Class Honors (Upper Division).
           </p>
           <div class="grid md:grid-cols-2 gap-4">
             <div>
