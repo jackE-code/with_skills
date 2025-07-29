@@ -792,7 +792,7 @@
               <h3 class="text-lg font-bold">Bachelor of Science in Actuarial Science</h3>
               <p class="opacity-80">Machakos University</p>
             </div>
-            <span class="text-xs bg-gray-600 px-2 py-1 rounded">2010 - 2014</span>
+            <span class="text-xs bg-gray-600 px-2 py-1 rounded">2021 - 2024</span>
           </div>
           <p class="mb-3 opacity-80">
             Specialized in Deep Learning and Database Systems. Graduated with Second Class Honors (Upper Division).
@@ -823,7 +823,7 @@
               <h3 class="text-lg font-bold">Professional Certifications</h3>
               <p class="opacity-80">Various Institutions</p>
             </div>
-            <span class="text-xs bg-gray-600 px-2 py-1 rounded">2015 - 2024</span>
+            <span class="text-xs bg-gray-600 px-2 py-1 rounded">2019 - 2021</span>
           </div>
           <div class="grid md:grid-cols-2 gap-4">
             <div>
